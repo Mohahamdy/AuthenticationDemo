@@ -1,13 +1,14 @@
 ﻿using AuthenticationDemo.DTOs;
 using AuthenticationDemo.Models;
+using AuthenticationDemo.Utilies.APIResponse;
 
 namespace AuthenticationDemo.Services
 {
     public interface IAuthService
     {
-        Task<string> RegisterAsync(User _user);
-        Task<string> LoginAsync(LoginDTO _loginDo);
-        Task<string> AssignUserToRoleAsync(UserRoleDTO _userRoleDTO);
-        Task<IQueryable<RegisterDTO>> GetAllUsersAsync();
+        Task<APIResponseModel<string>> RegisterAsync(User _user);
+        Task<APIResponseModel<string>> LoginAsync(LoginDTO _loginDo);
+        Task<APIResponseModel<string>> AssignUserToRoleAsync(UserRoleDTO _userRoleDTO);
+        Task<APIResponseModel<IQueryable<RegisterDTO>>> GetAllUsersAsync();
     }
 }

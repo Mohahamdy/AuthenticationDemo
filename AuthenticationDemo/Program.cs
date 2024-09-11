@@ -1,6 +1,7 @@
 
 using AuthenticationDemo.Models;
 using AuthenticationDemo.Services;
+using AuthenticationDemo.Utilies.APIResponse;
 using AuthenticationDemo.Utilies.Token;
 using Microsoft.AspNetCore.Authentication.BearerToken;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -22,7 +23,7 @@ namespace AuthenticationDemo
             //Add auth service
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddScoped<IJwtToken,JwtToken>();
-
+            
             //Add Context
             builder.Services.AddDbContext<AuthDbContext>(
                 option => option.UseSqlServer(
